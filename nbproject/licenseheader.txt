@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst} Project: ${project.displayName}
+${licensePrefix}Date: ${date}
+${licensePrefix}Filename: ${nameAndExt}
+${licensePrefix}Author: XK-Z0-XD
+${licensePrefix}Encoding: ${encoding}
+${licenseLast}
+</#if>

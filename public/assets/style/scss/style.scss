@@ -1,0 +1,49 @@
+/* Project: em9836.github.io
+Date: Dec 6, 2024
+Filename: style.scss
+Author: em9836
+Encoding: UTF-8
+*/
+/*
+    Created on : Dec 6, 2024, 11:22:44 PM
+  
+*/
+@use 'lib';
+@import "lib.css";
+@import "animations.css";
+@import "controls.css";
+@import "containers.scss";
+.terminal{
+    #glitch {
+        animation: shadow 3s linear infinite;
+    }
+    #screen{
+        &::before{
+
+        }
+        &:after{
+            z-index: 4;
+            display: block;
+            pointer-events: none;
+            background-image: var(--noise);
+            opacity: 0.375;
+            animation: noise 3s steps(5, end) infinite;
+        }
+        background-image: radial-gradient(transparent 10%, rgba(0, 0, 0, 0.5) 90%);
+    }
+    #scanline{
+        
+    }
+    #crt{
+        background-image: var(--noise);
+        background-image:  radial-gradient(ellipse, transparent, rgba(0, 0, 0, 0.5)90%);
+        &:after{
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
+            background-repeat: repeat-y;
+            background-size: 100% 7px;
+            z-index: 3;
+            pointer-events: none;
+        }
+    }
+    
+}

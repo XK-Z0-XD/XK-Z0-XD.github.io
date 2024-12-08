@@ -1,0 +1,15 @@
+{
+    "name": "XD-Z0-XD.github.io",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "eVmPr",
+    "contributors": [
+    ],
+    "dependencies": {}
+}
