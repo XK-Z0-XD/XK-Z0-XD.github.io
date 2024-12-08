@@ -9,4 +9,26 @@ Encoding: UTF-8
 
 */
 @use 'lib';
-@import "lib.css";
+.terminal{
+    code{
+        
+    }
+    header{
+
+    }
+
+    footer{
+
+    }
+    blockquote {
+        border: 2px dashed var(--fg);
+        padding: 10px;
+        width: fit-content;
+    }
+    section {
+        width: 100%;
+        height: 450px;
+        overflow-y: auto;
+        padding-left: 10px;
+    }
+}

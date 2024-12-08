@@ -1,24 +1,52 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>XK-Z0-XD</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="assets/style/css/style.css" type="text/css">
-<!--        <link rel="stylesheet" href="assets/css/main.css" type="text/css">-->
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-       
+        <link rel="stylesheet" href="assets/style/css/index.css" type="text/css">    
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/98e4c48f68.js" crossorigin="anonymous"></script>
+        <script src="assets/js/terminal.js"></script>
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body class="terminal green">
+        <div id="screen">
+            <div id="crt">
+                <div class="container">                    
+                    <div id="scanline"></div>                    
+                    <main id="content">
+                        <header><h1>SCP-TERMINAL</h1>
+                            <!--<img id="logo"/>-->
+                        </header>
+                        <p>this is a <strong>bold text █</strong></p>
+                        <p>Containment Class <var id="contain_class">Euclid</var></p>
+                        <div id="top-bar">
+                            <code>
+                                - Item #: <span id="item_no">999</span> <br>
+                                - Clearance Level: <span id="clearance_level">2</span>/<span id="clearance_title">Restricted</span> <br>
+                                - Containment Class: <span id="containment">Euclid</span>
+                                - Disruption Class: <span id="cont_class">Euclid</span>
+                                - Containment Class: <span id="cont_class">Euclid</span>
+                                
+                            </code>
+                        </div>
+                        <blockquote id="log">
+                            <figure>
+                                <figcaption>
+                                    Picture
+                                </figcaption>
+                            </figure>
+                            <!--<p>this is a <strong>block quote</strong></p>-->
+                            <!--<iframe id="output" src="https://scipnet-terminal.web.app/"></iframe>-->
+                        </blockquote>
+                        <a href="https://scipnet-terminal.web.app/">SCiPNET</a>
+                    </main>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

@@ -9,3 +9,40 @@ Encoding: UTF-8
     
 */
 
+@use 'lib';
+$color: var(--fg);
+$background: var(--bg);
+.terminal{    
+    button{
+        padding: 2px 10px;
+        margin: 2.5px;
+        background: rgba(0, 0, 0, 0);
+        &:hover {
+            cursor: pointer;
+            @include lib.color($bg: var(--fg),$fg:var(--bg));
+            border: 2px solid var(--fg);
+        } 
+    }
+    a{
+        color: $color;
+        &:hover {
+            cursor: pointer;
+            @include lib.color($bg: var(--fg),$fg:var(--bg));
+            border: 2px solid var(--fg);
+        } 
+        &:after {
+            content: " [→]";
+        }
+
+        &:active {
+            /*color: var(--green-fg);*/
+        }
+
+        &:visited:before {
+            content: "[V] ";
+        }
+        &:inactive{
+            text-decoration: line-through;
+        }
+    }
+}

@@ -1,11 +1,140 @@
-/* Project: em9836.github.io
-Date: Dec 7, 2024
-Filename: index.scss
-Author: em9836
-Encoding: UTF-8
-*/
-/*
-    Created on : Dec 7, 2024, 12:14:18 AM
-*/
 @use "lib";
-@import "lib.css";
+@import url("./animations.css");
+@import url("./controls.css");
+@import url("./containers.css");
+
+html {
+    font-family: monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s ease-out;
+    text-decoration: none;
+}
+
+*[data-toggle=on] {
+    display: block;
+}
+
+*[data-toggle=off] {
+    display: none;
+}
+.terminal{
+    @include lib.font;
+    @include lib.color;
+    padding: 0.25em!important;
+    margin: 0 auto;
+    text-wrap: stable; 
+    width: 100%;
+    &::selection {
+    }
+    #glitch{
+        animation: shadow 3s linear infinite, box-shadow 3s infinite;
+    }
+
+    #screen{
+        @include lib.full;
+        @include lib.color;
+        overflow-y: hidden;
+        animation: shadow 3s infinite, flicker 0.01s infinite;
+        padding: 5%;
+        /*        *:is(div,){
+                    animation: box-shadow 3s infinite;
+                }*/
+        &::before{
+            @include lib.full;
+            background-color: var(--bg);
+            background-image: radial-gradient(transparent 10%, rgba(0, 0, 0, 0.5) 90%);
+            opacity: 0.75;
+        }
+        &::after{
+            @include lib.full;
+            @include lib.screen;
+            z-index: 4;
+            display: block;
+            pointer-events: none;
+            background-image: var(--noise);
+            opacity: 0.375;
+            animation: noise 3s steps(5, end) infinite;
+        }
+
+    }
+    #crt{
+        @include lib.full;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0; 
+        overflow-y: hidden;
+        padding: 10px;
+        /*background-image:  radial-gradient(ellipse, transparent, rgba(0, 0, 0, 0.5)90%);*/
+        &::after{
+            @include lib.screen;
+            @include lib.full;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
+            background-repeat: repeat-y;
+            background-size: 100% 7px;
+            z-index: 3;
+            pointer-events: none;
+        }
+    }
+    #scanline{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        z-index: 1;
+        overflow-y: hidden;
+        &::after{
+            content:"";
+            width: 100%;
+            height: 35px;
+            bottom: 50%;
+            background-image: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.15) 50%, transparent 50%);
+            animation: scan 3s linear infinite;
+            background-size: 100%;
+            animation-fill-mode: forwards;
+            position: absolute;
+            z-index: 3;
+        }
+
+    }
+    #content{
+        *:is(h1, h2, h3, h4, h5, h6) {
+            @include lib.font($family: "cprime");
+            margin-bottom: 10px;
+            width: 500px;
+            font-size: inherit;
+            font-weight: normal;
+            color: var(--fg);
+            text-transform: uppercase;
+            text-align: center;
+            /*text-decoration: underline;*/
+            &::before {
+                content: "[ ";
+            }
+            &::after {
+                content: " ]";
+            }
+        }
+        hr {
+            border: 1px dashed var(--border-color);
+            margin: 5px 0;
+        }
+        p {
+            /*font-family: Rainbow100, var(--text-font);*/
+        }
+        var{
+
+        }
+
+
+
+    }
+}
