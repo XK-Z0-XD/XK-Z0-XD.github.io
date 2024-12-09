@@ -25,3 +25,6 @@ function getLink(){
 function containmentImage() {
     var x = "https://scp-wiki.wikidot.com/local--files/component:anomaly-class-bar/safe-icon.svg"
 }
+function typeout(){
+    
+}

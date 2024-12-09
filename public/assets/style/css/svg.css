@@ -1,0 +1,48 @@
+/* Project: XK-Z0-XD.github.io
+Date: Dec 8, 2024
+Filename: svgStyle.scss
+Author: XK-Z0-XD
+Encoding: UTF-8
+*/
+/*
+    Created on : Dec 8, 2024, 7:43:15 PM
+    Author     : eVmPr
+*/
+@import url("vars.css");
+/*@debug color.mix(var(--main),var(--bg));*/
+:root {
+  /*--mid:*/
+}
+
+#logo #inner {
+  fill: none;
+  color: var(--mid);
+  stroke: var(--mid);
+  stroke-width: 6px;
+}
+#logo #outer {
+  fill: "none";
+  color: var(--mid);
+  stroke: var(--mid);
+  stroke-width: 4;
+}
+#logo .arrow {
+  color: var(--mid);
+  fill: var(--mid);
+  stroke: var(--mid);
+}
+
+/*svg{
+    .inner-circle{
+        fill: none;
+        stroke: var(--mid);
+    }
+    .shell{
+        fill: none;
+        stroke: var(--mid);
+    }
+    .arrow{
+        fill: var(--mid);
+        stroke: var(--mid);
+    }
+}*/

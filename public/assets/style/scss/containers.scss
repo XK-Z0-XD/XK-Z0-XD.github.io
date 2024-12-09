@@ -11,21 +11,16 @@ Encoding: UTF-8
 @use 'lib';
 
 .terminal{
-    #main{
-            background-image: url("../svg/logo/animated.svg");
-            padding: 5%;
-            overflow-y: hidden;
-            &::before{
-                @include lib.screen;
-            }
-
+    svg{
         
     }
+    
     #content{
         /*        overflow: auto;
                 overflow-wrap: wrap;*/
-        overflow: auto;
+        overflow: scroll;
         height: 100%;
+        max-height: 800px;
         scrollbar-width: 10px;
         /*scrollbar-color: var(--fg) var(--bg);*/
         scrollbar-color: var(--fg) transparent;
@@ -42,8 +37,12 @@ Encoding: UTF-8
             border-radius: 6px; /* Rounded corners */
         }
     }
+    *:is(code,pre){
+        @include lib.font($family: "rnb");
+        font-size: 16px;
+    }
     code{
-
+        
     }
     pre{
         text-align: left;

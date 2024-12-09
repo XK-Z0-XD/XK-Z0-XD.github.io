@@ -7,5 +7,6 @@
 
 
 const link = {
+    main: "",
     
-}
+};

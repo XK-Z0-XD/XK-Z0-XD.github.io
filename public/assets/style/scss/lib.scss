@@ -24,9 +24,13 @@ $background: var(--bg);
     border-radius: $radius;
 }
 @mixin font($family:"cnr", $size){
+    $default: "Courier New", "Lucinda Console", monospace;
+    $selected: "";
     @if $family{
         @if $family == "cprime"{
-            font-family: "Courier Prime", "Courier New", "Lucinda Console", monospace;
+            /*font-family: "Courier Prime", "Courier New", "Lucinda Console", monospace;*/
+            font-family: "Courier Prime", $default;
+            $selected: "Courier Prime";
         } @else if $family == "ocra"{
             font-family: "OCR-A","Lucinda Console","Courier New",monospace;
         }@else if $family == "vt323"{
@@ -45,15 +49,17 @@ $background: var(--bg);
         font-size: $size;
     }
 }
-@mixin font($family:"cn"){
+@mixin font($family:"cnr"){
+    $default: "Courier New", "Lucinda Console", monospace;
     @if $family == "cprime"{
+        
         font-family: "Courier Prime", "Courier New", "Lucinda Console", monospace;
     } @else if $family == "ocra"{
         font-family: "OCR-A","Lucinda Console","Courier New",monospace;
     }@else if $family == "vt323"{
         font-family: "VT323","Lucinda Console","Courier New",monospace;
     }@else if $family == "cnr"{
-        font-family: "Code New Roman","Lucinda Console","Courier New",monospace;
+        font-family: "Code New Roman",$default;
     }@else if $family == "bitwise"{
         font-family: "Bitwise","Lucinda Console","Courier New",monospace;
     }@else if $family == "rnb"{

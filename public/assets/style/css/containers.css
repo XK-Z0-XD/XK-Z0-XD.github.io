@@ -8,22 +8,12 @@ Encoding: UTF-8
     Created on : Dec 7, 2024, 12:26:44 AM
 
 */
-.terminal #main {
-  background-image: url("../svg/logo/animated.svg");
-  padding: 5%;
-  overflow-y: hidden;
-}
-.terminal #main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 .terminal #content {
   /*        overflow: auto;
           overflow-wrap: wrap;*/
-  overflow: auto;
+  overflow: scroll;
   height: 100%;
+  max-height: 800px;
   scrollbar-width: 10px;
   /*scrollbar-color: var(--fg) var(--bg);*/
   scrollbar-color: var(--fg) transparent;
@@ -38,6 +28,10 @@ Encoding: UTF-8
 .terminal #content::-webkit-scrollbar-thumb {
   background: var(--fg);
   border-radius: 6px; /* Rounded corners */
+}
+.terminal *:is(code, pre) {
+  font-family: "MxPlus Rainbow100 re.80", "Lucinda Console", "Courier New", monospace;
+  font-size: 16px;
 }
 .terminal pre {
   text-align: left;
