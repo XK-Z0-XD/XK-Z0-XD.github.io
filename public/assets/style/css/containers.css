@@ -1,65 +1,17 @@
-@import url("vars.css"); /* Project: em9836.github.io
-Date: Dec 7, 2024
-Filename: containers.scss
-Author: em9836
-Encoding: UTF-8
-*/
-/*
-    Created on : Dec 7, 2024, 12:26:44 AM
+/* Error: There is no module with the namespace "lib".
+ *    ,
+ * 17 |         @include lib.full;
+ *    |         ^^^^^^^^^^^^^^^^^
+ *    '
+ *   style\scss\containers.scss 17:9  root stylesheet */
 
-*/
-.terminal #content {
-  /*        overflow: auto;
-          overflow-wrap: wrap;*/
-  overflow: scroll;
-  height: 100%;
-  max-height: 800px;
-  scrollbar-width: 10px;
-  /*scrollbar-color: var(--fg) var(--bg);*/
-  scrollbar-color: var(--fg) transparent;
-}
-.terminal #content::-webkit-scrollbar {
-  width: 10px; /* Width of the scrollbar */
-}
-.terminal #content ::-webkit-scrollbar-track {
-  /*background:  var(--bg);*/
-  background: transparent;
-}
-.terminal #content::-webkit-scrollbar-thumb {
-  background: var(--fg);
-  border-radius: 6px; /* Rounded corners */
-}
-.terminal *:is(code, pre) {
-  font-family: "MxPlus Rainbow100 re.80", "Lucinda Console", "Courier New", monospace;
-  font-size: 16px;
-}
-.terminal pre {
-  text-align: left;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: 1px dashed var(--fg);
-}
-.terminal header {
-  width: 100%;
-  max-width: 100%;
-  /*max-width: max-content;*/
-  border-bottom: 1px solid var(--fg);
-  margin-bottom: 1%;
-  align-content: center;
-  text-align: center;
-}
-.terminal header h1 {
-  width: 100%;
-}
-.terminal blockquote {
-  border: 2px dashed var(--fg);
-  padding: 10px;
-  width: fit-content;
-}
-.terminal section {
-  width: 100%;
-  height: 450px;
-  overflow-y: auto;
-  padding-left: 10px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "lib".\a    \2577 \a 17 \2502          @include lib.full;\a    \2502          ^^^^^^^^^^^^^^^^^\a    \2575 \a   style\\scss\\containers.scss 17:9  root stylesheet';
 }

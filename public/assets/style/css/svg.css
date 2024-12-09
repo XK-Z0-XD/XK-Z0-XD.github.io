@@ -8,10 +8,24 @@ Encoding: UTF-8
     Created on : Dec 8, 2024, 7:43:15 PM
     Author     : eVmPr
 */
+/*@use "sass:color";*/
+/*@use 'lib';*/
 @import url("vars.css");
-/*@debug color.mix(var(--main),var(--bg));*/
-:root {
-  /*--mid:*/
+.default * {
+  /*@include lib.middle($theme: default);*/
+  --mid: rgb(128, 128, 128);
+}
+
+.green * {
+  --mid: rgb(54, 150, 65);
+}
+
+.blue * {
+  --mid: rgb(116, 116, 243);
+}
+
+.red * {
+  --mid: rgb(123, 10, 6);
 }
 
 #logo #inner {

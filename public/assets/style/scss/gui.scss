@@ -4,12 +4,8 @@ Filename: gui.scss
 Author: XK-Z0-XD
 Encoding: UTF-8
 */
-/*
-    Created on : Dec 8, 2024, 3:56:19 PM
-    Author     : eVmPr
-*/
-@use "lib";
-
+@import "_lib.scss";
+@import url("main.css");
 .terminal{
     
     .window{

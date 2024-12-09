@@ -1,12 +1,7 @@
-@use "lib";
-@import url("../reset.css");
-@import url("animations.css");
-@import url("controls.css");
-@import url("containers.css");
-@import url("gui.css");
-@import url("svg.css");
+@import 'lib.scss';
 html {
     font-family: monospace;
+    overflow: hidden;
 }
 
 * {
@@ -29,10 +24,10 @@ html {
 }
 
 .terminal{
-    @include lib.font;
-    @include lib.color;
+    @include font;
+    @include color;
     *::selection{
-        @include lib.color($bg: var(--fg),$fg: var(--bg));
+        @include color($bg: var(--fg),$fg: var(--bg));
     }
     padding: 0.25em!important;
     margin: 0 auto;
@@ -44,20 +39,20 @@ html {
     }
 
     #screen{
-        @include lib.full;
-        @include lib.color;
-        overflow-y: hidden;        
-        animation: shadow 3s infinite;/* flicker 0.01s linear infinite;*/
+        @include full;
+        @include color;
+        overflow: hidden;
+        animation: shadow 3s infinite, flicker 0.01s linear infinite;
         padding: 5%;
         &::before{
-            @include lib.full;
+            @include full;
             background-color: var(--bg);
             background-image: radial-gradient(transparent 10%, rgba(0, 0, 0, 0.5) 90%);
             opacity: 0.75;
         }
         &::after{
-            @include lib.full;
-            @include lib.screen;
+            @include full;
+            @include screen;
             z-index: 4;
             display: block;
             pointer-events: none;
@@ -65,26 +60,36 @@ html {
             opacity: 0.375;
             animation: noise 3s steps(5, end) infinite;
         }
-
+        #background{
+            @include full;
+            @include screen;
+            animation: boxshadow 3 linear infinite;
+            opacity: 0.5;
+            color: var(--mid)!important;
+            index: 1;
+            position: fixed;
+        }
     }
     #crt{
-        @include lib.full;
+        @include screen;
+        @include full;
         display: block;
-        position: absolute;
+        /*position: absolute;*/
         top: 0;
         left: 0; 
         overflow: hidden;
         padding: 10px;
+        z-index: 1;
         background-image: var(--grad);
         &::before{
-            -webkit-mask-box-image: url(--logo);
+            /*-webkit-mask-box-image: url(--logo);*/
         }
         &::after{
-            @include lib.screen;
-            @include lib.full;
+            @include screen;
+            @include full;
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
             background-repeat: repeat-y;
-            background-size: 100% 7px;
+            background-size: 100% 8px;
             z-index: 3;
             pointer-events: none;
         }
@@ -92,10 +97,11 @@ html {
     #scanline{
         top: 0;
         left: 0;
+        /*position: fixed;*/
         width: 100%;
         height: 10px;
         z-index: 1;
-        overflow: hidden;
+        /*        overflow: hidden;*/
         &::after{
             content:"";
             width: 100%;
@@ -106,18 +112,11 @@ html {
             background-size: 100%;
             animation-fill-mode: forwards;
             position: absolute;
-            z-index: 3;
+            z-index: 5;
         }
 
     }
-    #background{
-        
-        @include lib.full;
-        @include lib.screen;
-        color: var(--mid);
-        index: 1;
-        position: fixed;
-    }
+
     #main{
         /*background-image: url("data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 135 135' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Clink xmlns='http://www.w3.org/1999/xhtml' rel='stylesheet' href='../../style/css/svg.css' type='text/css' /%3E%3Cdefs%3E%3Cstyle%3E @import url('../../style/css/vars.css'); @import url('../../style/css/svg.css'); %3C/style%3E%3C/defs%3E%3Ccircle cx='67.7' cy='71.5' r='33' fill='none' stroke='var(--fg)' stroke-width='6'/%3E%3Cpath d='m51.9 11.9h31.7l3.07 11.4.944.391c19.4 8.03 32 26.9 32 47.9 0 2.26-.149 4.53-.445 6.77l-.133 1.01 8.37 8.37-15.8 27.4-11.4-3.06-.809.623c-9.06 6.95-20.2 10.7-31.6 10.7-11.4 6e-5-22.5-3.77-31.6-10.7l-.81-.623-11.4 3.06-15.8-27.4 8.37-8.37-.133-1.01c-.296-2.25-.445-4.51-.445-6.77.000141-21 12.6-39.9 32-47.9l.944-.391z' fill='none' stroke='var(--fg)' stroke-width='4'/%3E%3Cpath id='b' d='m64.7 30.6v24h-5.08l8.08 14 8.08-14h-5.08l-.000265-24h-5.99' fill='var(--fg)' stroke='var(--fg)'/%3E%3Cuse id='a' transform='rotate(120 67.7 71.5)' xlink:href='%23b'/%3E%3Cuse transform='rotate(120 67.7 71.5)' xlink:href='%23a'/%3E%3C/svg%3E");*/
         /*background-image: url("../../svg/logo/main.svg");*/
@@ -125,10 +124,9 @@ html {
         background-repeat: no-repeat;
         background-position: center;
         /*background-attachment: fixed;*/
-        @include lib.full;
+        @include full;
         &::before{ 
-            @include lib.screen;
-
+            @include screen;
             stroke: var(--fg);
             padding: 5%;
             overflow-y: hidden;
@@ -137,46 +135,62 @@ html {
 
     }
     #content{     
-        @include lib.full;
-        index: 3;
-        position: fixed;
-        
+        h1{
+            font-size: 24px;
+        }
+        *:is(h1, h2, h3, h4, h5, h6) {
+            @include font($family: "cprime");
+            /*margin-bottom: 10px;*/
+            width: 100%;
+            /*font-size: inherit;*/
+            font-weight: bold;
+            color: var(--fg);
+            text-transform: uppercase;
+            text-align: center;
+            /*text-decoration: underline;*/
+            &::before {
+                content: "[ ";
+            }
+            &::after {
+                content: " ]";
+            }
+        }
     }
-
     hr {
         border: 1px dashed var(--border-color);
         margin: 5px 0;
     }
     p {
-        @include lib.font("cnr");
+        @include font("cnr");
         /*font-family: Rainbow100, var(--text-font);*/
     }
-    var{
-
-    }
-    svg#emblem{
+    
+/*    svg#emblem{
         position: fixed;
         *{
             color: var(--fg);
         }
-    }
-
+    }*/
 
 }
-*:is(h1, h2, h3, h4, h5, h6) {
-    @include lib.font($family: "cprime");
-    /*margin-bottom: 10px;*/
-    width: 100%;
-    font-size: inherit;
-    font-weight: bold;
-    color: var(--fg);
-    text-transform: uppercase;
-    text-align: center;
-    /*text-decoration: underline;*/
-    &::before {
-        content: "[ ";
+#logo{
+    #inner{
+        fill: none;
+        color: var(--mid);
+        stroke: var(--mid);
+        stroke-width: 6px;
     }
-    &::after {
-        content: " ]";
+    
+    #outer{
+        fill: "none";
+        color: var(--mid);
+        stroke: var(--mid);
+        stroke-width: 4;
     }
+    .arrow{
+        color: var(--mid);
+         fill: var(--mid);
+        stroke: var(--mid);
+    }
+    
 }

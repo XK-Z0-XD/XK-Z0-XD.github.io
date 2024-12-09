@@ -4,12 +4,8 @@ Filename: controls.scss
 Author: XK-Z0-XD
 Encoding: UTF-8
 */
-/*
-    Created on : Dec 7, 2024, 6:20:02 PM
-    
-*/
 
-@use 'lib';
+@import "_lib.scss";
 $color: var(--fg);
 $background: var(--bg);
 .terminal{    
@@ -19,7 +15,7 @@ $background: var(--bg);
         background: rgba(0, 0, 0, 0);
         &:hover {
             cursor: pointer;
-            @include lib.color($bg: var(--fg),$fg:var(--bg));
+            @include color($bg: var(--fg),$fg:var(--bg));
             border: 2px solid var(--fg);
         } 
     }
@@ -30,7 +26,7 @@ $background: var(--bg);
         color: $color;
         &:hover {
             cursor: pointer;
-            @include lib.color($bg: var(--fg),$fg:var(--bg));
+            @include color($bg: var(--fg),$fg:var(--bg));
             border: 2px solid var(--fg);
         } 
         &:after {

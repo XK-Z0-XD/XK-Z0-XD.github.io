@@ -1,13 +1,11 @@
-@import url("vars.css"); /* Project: XK-Z0-XD.github.io
+/* Project: XK-Z0-XD.github.io
 Date: Dec 8, 2024
 Filename: gui.scss
 Author: XK-Z0-XD
 Encoding: UTF-8
 */
-/*
-    Created on : Dec 8, 2024, 3:56:19 PM
-    Author     : eVmPr
-*/
+/*@import url("vars.css");*/
+@import url("main.css");
 .terminal .window {
   background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");
   float: center;

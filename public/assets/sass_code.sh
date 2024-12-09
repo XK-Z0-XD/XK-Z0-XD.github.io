@@ -18,7 +18,7 @@ for file in $files; do
     # remove base path
     filename="${file##*/}"
     name="${filename%.scss}"
-    if [[ "$name" == "lib" ]]; then
+    if [[ "$name" == "_lib" ]]; then
         echo "skipping lib"
     else
         echo "compiling $name"
