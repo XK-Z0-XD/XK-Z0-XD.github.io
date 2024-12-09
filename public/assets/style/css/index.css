@@ -1,13 +1,8 @@
-/* Project: em9836.github.io
-Date: Dec 3, 2024
-Filename: lib.scss
-Author: em9836
-Encoding: UTF-8
-*/
 @import url("vars.css");
-@import url("./animations.css");
-@import url("./controls.css");
-@import url("./containers.css");
+@import url("animations.css");
+@import url("controls.css");
+@import url("containers.css");
+@import url("gui.css");
 html {
   font-family: monospace;
 }
@@ -38,7 +33,11 @@ html {
   padding: 0.25em !important;
   margin: 0 auto;
   text-wrap: stable;
-  width: 100%;
+  /*width: 100%;*/
+}
+.terminal *::selection {
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
 }
 .terminal #glitch {
   animation: shadow 3s linear infinite, box-shadow 3s infinite;
@@ -49,11 +48,8 @@ html {
   background-color: var(--bg) !important;
   color: var(--fg) !important;
   overflow-y: hidden;
-  animation: shadow 3s infinite, flicker 0.01s infinite;
+  animation: shadow 3s infinite; /* flicker 0.01s linear infinite;*/
   padding: 5%;
-  /*        *:is(div,){
-              animation: box-shadow 3s infinite;
-          }*/
 }
 .terminal #screen::before {
   width: 100%;
@@ -83,9 +79,9 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  overflow-y: hidden;
+  overflow: hidden;
   padding: 10px;
-  /*background-image:  radial-gradient(ellipse, transparent, rgba(0, 0, 0, 0.5)90%);*/
+  background-image: var(--grad);
 }
 .terminal #crt::after {
   content: "";
@@ -106,7 +102,7 @@ html {
   width: 100%;
   height: 10px;
   z-index: 1;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .terminal #scanline::after {
   content: "";
@@ -122,10 +118,10 @@ html {
 }
 .terminal #content *:is(h1, h2, h3, h4, h5, h6) {
   font-family: "Courier Prime", "Courier New", "Lucinda Console", monospace;
-  margin-bottom: 10px;
-  width: 500px;
+  /*margin-bottom: 10px;*/
+  width: 100%;
   font-size: inherit;
-  font-weight: normal;
+  font-weight: bold;
   color: var(--fg);
   text-transform: uppercase;
   text-align: center;

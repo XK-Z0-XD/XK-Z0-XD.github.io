@@ -10,10 +10,17 @@ Encoding: UTF-8
 */
 @use "lib";
 .terminal{
+    
     .window{
+        background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");
+        float: center;
+        .warning{
+            
+        }
         .top-bar{
             
         }
+        
     }
     
 }

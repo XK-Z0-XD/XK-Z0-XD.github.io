@@ -1,11 +1,4 @@
-/* Project: em9836.github.io
-Date: Dec 3, 2024
-Filename: lib.scss
-Author: em9836
-Encoding: UTF-8
-*/
-@import url("vars.css");
-/* Project: em9836.github.io
+@import url("vars.css"); /* Project: em9836.github.io
 Date: Dec 7, 2024
 Filename: containers.scss
 Author: em9836
@@ -15,6 +8,56 @@ Encoding: UTF-8
     Created on : Dec 7, 2024, 12:26:44 AM
 
 */
+.terminal #main {
+  background-image: url("../svg/logo/animated.svg");
+  padding: 5%;
+  overflow-y: hidden;
+}
+.terminal #main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.terminal #content {
+  /*        overflow: auto;
+          overflow-wrap: wrap;*/
+  overflow: auto;
+  height: 100%;
+  scrollbar-width: 10px;
+  /*scrollbar-color: var(--fg) var(--bg);*/
+  scrollbar-color: var(--fg) transparent;
+}
+.terminal #content::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+.terminal #content ::-webkit-scrollbar-track {
+  /*background:  var(--bg);*/
+  background: transparent;
+}
+.terminal #content::-webkit-scrollbar-thumb {
+  background: var(--fg);
+  border-radius: 6px; /* Rounded corners */
+}
+.terminal pre {
+  text-align: left;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px dashed var(--fg);
+}
+.terminal header {
+  width: 100%;
+  max-width: 100%;
+  /*max-width: max-content;*/
+  border-bottom: 1px solid var(--fg);
+  margin-bottom: 1%;
+  align-content: center;
+  text-align: center;
+}
+.terminal header h1 {
+  width: 100%;
+}
 .terminal blockquote {
   border: 2px dashed var(--fg);
   padding: 10px;

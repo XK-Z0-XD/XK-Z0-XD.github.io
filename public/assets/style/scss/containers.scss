@@ -9,12 +9,61 @@ Encoding: UTF-8
 
 */
 @use 'lib';
+
 .terminal{
-    code{
+    #main{
+            background-image: url("../svg/logo/animated.svg");
+            padding: 5%;
+            overflow-y: hidden;
+            &::before{
+                @include lib.screen;
+            }
+
         
     }
-    header{
+    #content{
+        /*        overflow: auto;
+                overflow-wrap: wrap;*/
+        overflow: auto;
+        height: 100%;
+        scrollbar-width: 10px;
+        /*scrollbar-color: var(--fg) var(--bg);*/
+        scrollbar-color: var(--fg) transparent;
+        &::-webkit-scrollbar {
+            width: 10px; /* Width of the scrollbar */
+        }
+        ::-webkit-scrollbar-track {
+            /*background:  var(--bg);*/ 
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--fg); 
 
+            border-radius: 6px; /* Rounded corners */
+        }
+    }
+    code{
+
+    }
+    pre{
+        text-align: left;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: lib.cborder(1px,dashed);
+    }
+    header{
+        width: 100%;
+        max-width: 100%;
+        /*max-width: max-content;*/
+        border-bottom: lib.cborder(1px,solid);
+        margin-bottom: 1%;
+        align-content: center;
+        text-align: center;
+        h1{
+            width: 100%; 
+
+        }
     }
 
     footer{
