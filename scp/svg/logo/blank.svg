@@ -3,5 +3,6 @@
 <svg width="100%" height="100%" viewBox="0 0 448 429" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
     <g transform="matrix(1.02687,0,0,1.02687,385.108,173.118)">
         <path d="M0,89.455L-19.45,67.853C-15.093,37.519 -21.323,5.896 -36.696,-20.629C-52.368,-47.775 -76.524,-68.331 -104.69,-79.794L-113.688,-107.485L-200.224,-107.485L-209.222,-79.794C-237.388,-68.332 -261.544,-47.775 -277.216,-20.629C-292.59,5.893 -298.82,37.521 -294.463,67.852L-313.928,89.471L-270.654,164.417L-241.886,158.3C-195.573,196.94 -118.319,196.931 -72.014,158.289L-43.27,164.4L0,89.455Z" style="fill:none;fill-rule:nonzero;stroke:#000;stroke-width:12.16px;"/>
+        
     </g>
 </svg>
