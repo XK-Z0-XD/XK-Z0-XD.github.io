@@ -1,6 +1,5 @@
 //_lib.scss
 @use "sass:color";
-/*@import url("vars.css");*/
 $foreground: var(--fg);
 $background: var(--bg);
 
@@ -54,7 +53,6 @@ $background: var(--bg);
 @mixin font($family:"cnr"){
     $default: "Courier New", "Lucinda Console", monospace;
     @if $family == "cprime"{
-
         font-family: "Courier Prime", "Courier New", "Lucinda Console", monospace;
     } @else if $family == "ocra"{
         font-family: "OCR-A","Lucinda Console","Courier New",monospace;

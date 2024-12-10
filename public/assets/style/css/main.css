@@ -12,37 +12,38 @@ Author: XK-Z0-XD
 Encoding: UTF-8
 */
 /*@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inconsolata&family=Roboto+Mono&family=Share+Tech+Mono&family=VT323&display=swap");*/
+@import url("fonts/ocr-a.ttf");
+@import url("fonts/Bitwise-m19x.ttf");
+@import url("fonts/code-new-roman.regular.otf");
+@import url("fonts/PxPlus_Rainbow100_re_80.ttf");
+@import url("fonts/VT323-Regular.ttf");
+@import url("fonts/CourierPrime-Regular.ttf");
+@import url("fonts/Px437_Phoenix_BIOS-2y.ttf");
+@import url("fonts/uwch.ttf");
 @import url("gui.css");
 @font-face {
+  font-family: vt323;
   src: url("fonts/VT323-Regular.ttf") format("truetype");
 }
 @font-face {
-  src: "Code New Roman";
+  font-family: cnr;
   src: url("fonts/code-new-roman.regular.otf");
 }
 @font-face {
+  font-family: bitwise;
   src: url("fonts/Bitwise-m19x.ttf") format("truetype");
 }
 @font-face {
+  font-family: ocra;
   src: url("fonts/ocr-a.ttf") format("truetype");
 }
 @font-face {
+  font-family: cprime;
   src: url("fonts/CourierPrime-Regular.ttf") format("truetype");
 }
 @font-face {
-  /*font-family: "";*/
-  src: url("fonts/MxPlus_Rainbow100_re_80.ttf") format("truetype");
-}
-@font-face {
-  font-family: IBM;
-  src: url("../fonts/Web437_IBM_BIOS-2y.woff");
-}
-@font-face {
-  font-family: "Acer";
-  src: url("../fonts/Web437_Acer_VGA_8x8-2y.woff");
-}
-@font-face {
-  src: url("../fonts/Web437_Nix8810_M16.woff");
+  font-family: rainbow;
+  src: url("fonts/PxPlus_Rainbow100_re_80.ttf") format("truetype");
 }
 /* VARIABLES */
 :root {
@@ -112,21 +113,20 @@ Encoding: UTF-8
     Created on : Dec 8, 2024, 7:43:15 PM
     Author     : eVmPr
 */
-/*@import url("vars.css");*/
 .default svg * {
   /*@include lib.middle($theme: default);*/
   --mid: rgb(128, 128, 128);
 }
 
-.green svg * {
+.green svg {
   --mid: rgb(54, 150, 65);
 }
 
-.blue svg * {
+.blue svg {
   --mid: rgb(116, 116, 243);
 }
 
-.red svg * {
+.red svg {
   --mid: rgb(123, 10, 6);
 }
 
@@ -162,7 +162,6 @@ Encoding: UTF-8
         stroke: var(--mid);
     }
 }*/
-/*@import url("vars.css");*/
 html {
   font-family: monospace;
   overflow: hidden;
@@ -373,7 +372,6 @@ html {
 
 /* containers
 */
-/*@import url("vars.css");*/
 .terminal .container {
   padding: 0 2.5%;
 }
@@ -439,7 +437,6 @@ Filename: controls.scss
 Author: XK-Z0-XD
 Encoding: UTF-8
 */
-/*@import url("vars.css");*/
 .terminal button {
   padding: 2px 10px;
   margin: 2.5px;

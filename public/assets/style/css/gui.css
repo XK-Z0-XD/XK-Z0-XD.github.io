@@ -4,7 +4,6 @@ Filename: gui.scss
 Author: XK-Z0-XD
 Encoding: UTF-8
 */
-/*@import url("vars.css");*/
 @import url("main.css");
 .terminal .window {
   background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");

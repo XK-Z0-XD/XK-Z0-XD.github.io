@@ -13,13 +13,13 @@ Encoding: UTF-8
     /*@include lib.middle($theme: default);*/
     --mid: rgb(128, 128, 128);
 }
-.green svg *{
+.green svg {
    --mid: rgb(54, 150, 65);
 }
-.blue svg *{
+.blue svg {
     --mid: rgb(116, 116, 243);
 }
-.red svg * {
+.red svg {
     --mid:  rgb(123, 10, 6);
 }
 #logo{

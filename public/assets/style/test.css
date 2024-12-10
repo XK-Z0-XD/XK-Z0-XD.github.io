@@ -1,0 +1,17 @@
+/* Project: XK-Z0-XD.github.io
+Date: Dec 9, 2024
+Filename: _test.scss
+Author: XK-Z0-XD
+Encoding: UTF-8
+*/
+/*
+    Created on : Dec 9, 2024, 4:35:38 PM
+    Author     : eVmPr
+*/
+/*$d-theme: theme(default);*/
+.test {
+  /*@include theme(default);*/
+  --bg: #111;
+  --fg: #fff;
+  --mix: color.mix(#111,#fff,$weight: $percent, $method: rgb);
+}

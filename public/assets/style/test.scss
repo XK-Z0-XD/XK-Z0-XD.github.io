@@ -1,0 +1,71 @@
+/* Project: XK-Z0-XD.github.io
+Date: Dec 9, 2024
+Filename: _test.scss
+Author: XK-Z0-XD
+Encoding: UTF-8
+*/
+/*
+    Created on : Dec 9, 2024, 4:35:38 PM
+    Author     : eVmPr
+*/
+@use 'sass:list';
+@use 'sass:color';
+$red: #ff0000;
+$green:#00ff00;
+$blue: #0000ff;
+$colors: red,blue,green,default;
+
+@mixin theme{
+    --bg: #111;
+    --fg: #fff;
+    --mix: color.mix(rgb(17, 17, 17),#fff,$weight: 50%,$method: rgb);
+}
+/*@function theme($color: default){
+    
+}*/
+@function backgd(){
+
+}
+@mixin theme($color: default){
+    $bg: #111;
+    $fg: #fff;
+    $percent: 50%;
+    @if ($color == default){
+        --bg: #111;
+        --fg: #fff;
+        --mix: color.mix(#111,#fff,$weight: 50%, $method: rgb);
+    }@else if ($color == red){
+        --bg: rgb(53, 3, 2);
+        --fg: rgb(192, 16, 10);
+        --mix: color.mix($fg,$bg,$percent);
+    }@else if ($color == green){
+        --bg: rgb(17, 51, 17);
+        --fg: rgb(91, 248, 112);
+        --mix: color.mix($fg,$bg,$percent);
+    }@else if ($color == blue){
+        --bg: rgb(66, 66, 231);
+        --fg: rgb(165, 165, 255);
+        --mix: color.mix($fg,$bg,$percent);
+    }
+}
+/* get font family*/
+@function font($family){
+    $default: "Courier New", "Lucinda Console", monospace;
+    $f: null;
+    @if $family == cprime{
+        $f: "Courier Prime";
+       
+    }@else if $family == cnr{
+        
+    }@else if $family == cnr{
+        
+    }@else if $family == cnr{
+        
+    }
+}
+/*$d-theme: theme(default);*/
+
+.test{
+    /*@include theme(default);*/
+    @include theme;
+}

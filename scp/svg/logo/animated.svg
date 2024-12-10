@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svgMain"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Logo-SCP-Default-Anim.svg"
+   inkscape:export-filename="C:\Users\Public\Pictures\Logo-SCP-Default-Anim.png"
+   inkscape:export-xdpi="20"
+   inkscape:export-ydpi="20"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="titleMain">Logo: SCP Foundation: Default</title>
+  <sodipodi:namedview
+     id="namedview963"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:snap-center="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:zoom="0.67081228"
+     inkscape:cx="734.9299"
+     inkscape:cy="455.41802"
+     inkscape:window-width="1759"
+     inkscape:window-height="1003"
+     inkscape:window-x="145"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs958">
+    <style>
+      #gOuterCircle {
+        transform-origin: 500px 500px;
+        animation: cont-spin 15s linear infinite;
+      }
+      @keyframes cont-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      #gInnerCircle {
+        transform-origin: 500px 500px;
+        animation: clock-spin cubic-bezier(.62, 0, .52, 1.3) 10s infinite;
+      }
+      @keyframes clock-spin {
+        0%, 15% { transform: rotate(0deg); }
+        25%, 40% { transform: rotate(90deg); }
+        50%, 65% { transform: rotate(180deg); }
+        75%, 90% { transform: rotate(270deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="gOuterCircle">
+      <path
+         id="pProtectPath"
+         style="display:inline;fill:none;stroke:#000000;stroke-width:30;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 350,50 -31.22187,93.6656 a 400,400 0 0 0 -218.77786,356.33433 400,400 0 0 0 0.79427,21.22453 l -65.505568,73.87145 149.999998,259.80792 96.72742,-19.7936 a 400,400 0 0 0 217.98412,64.88955 400,400 0 0 0 217.9841,-64.88955 l 96.72745,19.7936 150,-259.80792 -65.5061,-73.87145 A 400,400 0 0 0 900,500 400,400 0 0 0 681.1295,143.38814 L 650,50 Z" />
+      <g
+         id="gProtectShape"
+         style="display:none">
+        <circle
+           style="fill:none;stroke:#000000;stroke-width:30;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="cProtectCircle"
+           cx="500"
+           cy="500"
+           r="400" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 350,50 h 300 l 50,150 H 300 Z"
+           id="pProtectTrap1"
+           sodipodi:nodetypes="ccccc"
+           inkscape:transform-center-y="-375" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pProtectTrap1"
+           inkscape:transform-center-y="-375"
+           id="uProtectTrap2"
+           width="100%"
+           height="100%"
+           transform="rotate(120,500,500)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pProtectTrap1"
+           inkscape:transform-center-y="-375"
+           id="uProtectTrap3"
+           width="100%"
+           height="100%"
+           transform="rotate(-120,500,500)" />
+      </g>
+    </g>
+    <g
+       id="gInnerCircle">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:50;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="cSecureCircle"
+         cx="500"
+         cy="500"
+         r="250" />
+      <g
+         id="gContainArrow1">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rContainShaft"
+           width="30"
+           height="200"
+           x="485"
+           y="175" />
+        <path
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="M 440,350 H 560 L 500,475 Z"
+           id="pContainHead"
+           sodipodi:nodetypes="cccc" />
+      </g>
+      <use
+         xlink:href="#gContainArrow1"
+         id="uContainArrow2"
+         transform="rotate(120,500,500)"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+      <use
+         xlink:href="#gContainArrow1"
+         id="uContainArrow3"
+         transform="rotate(-120,500,500)"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </g>
+  </g>
+  <metadata
+     id="metadata5907">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Logo: SCP Foundation: Default</dc:title>
+        <dc:date>July 4th, 2021</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>ChaosMageX</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>CC-BY-SA 3.0 : Creative Commons Share-Alike License Version 3.0</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>SCP Wiki</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:identifier>SCP Foundation</dc:identifier>
+        <dc:language>EN-US (English - United States)</dc:language>
+        <dc:coverage>SCP Foundation Multiverse</dc:coverage>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>SCP</rdf:li>
+            <rdf:li>Secure</rdf:li>
+            <rdf:li>Contain</rdf:li>
+            <rdf:li>Protect</rdf:li>
+            <rdf:li>Foundation</rdf:li>
+            <rdf:li>Wiki</rdf:li>
+            <rdf:li>Logo</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:description>Generic SCP Foundation Logo, created in Inkscape from scratch (with just a visual reference). Meant to store the most basic data needed to recreate the SCP Foundation Logo in Inkscape for any future custom logo project, particularly how to recreate the outer Protect ring.</dc:description>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>ChaosMageX</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+        <dc:relation>Logo: SCP Foundation: Default</dc:relation>
+        <dc:source>http://scp-wiki.wikidot.com/local--files/chaos-arts/Logo-SCP-Default.svg</dc:source>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

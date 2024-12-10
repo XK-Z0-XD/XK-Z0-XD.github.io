@@ -10,7 +10,7 @@ function getRequest(url) {
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET",url,true);
     xhttp.onload = function () {
-
+        console.log("LOADED");
     };
     
 }

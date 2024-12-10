@@ -7,6 +7,7 @@
     <defs>
         <style>
             @import url("../../style/css/vars.css");
+            @import url("../../style/css/svg.css");
         </style>
     </defs>    
     <circle id="inner" class="inner-circle" cx="67.7" cy="71.5" r="33"
