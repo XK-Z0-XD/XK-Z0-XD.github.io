@@ -5,6 +5,23 @@
     .container{
         padding: 0 2.5%;
     }
+    
+    *{
+        &::-webkit-scrollbar {
+            width: 10px; /* Width of the scrollbar */
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--fg); 
+            
+            border-radius: 0px; /* Rounded corners */
+        }
+scrollbar-width: 10px;
+        scrollbar-color: var(--fg) transparent;
+        
+    }
     #content{
         @include full;
         index: 3;
@@ -53,7 +70,16 @@
 
         }
     }
-
+    img{
+        
+    }
+    figure{
+        @include border;
+        padding: 5px;
+        figcaption{
+            
+        }
+    }
     footer{
 
     }

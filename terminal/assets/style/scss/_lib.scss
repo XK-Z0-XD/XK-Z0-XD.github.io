@@ -7,6 +7,14 @@ $background: var(--bg);
     width: 100%;
     height: 100%;
 }
+@mixin size{
+    width: 100%;
+    height: 100%;
+}
+@mixin size($value){
+    width: $value;
+    height: $value;
+}
 @mixin color{
     background-color: var(--bg);
     color: var(--fg);
@@ -16,7 +24,8 @@ $background: var(--bg);
     color: $fg !important;
 }
 @mixin border{
-
+    border-color: $color;
+    border-style: $style;
 }
 @mixin border($color: var(--fg),$width: 1px, $style: solid, $radius: 0){
     border-color: $color;
@@ -77,10 +86,7 @@ $background: var(--bg);
     top: 0;
     left: 0;
 }
-@mixin size{
-    width: 100%;
-    height: 100%;
-}
+
 @function midColor($th){
     $c: null;
     @if($th==red){

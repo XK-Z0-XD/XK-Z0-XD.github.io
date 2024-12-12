@@ -8,40 +8,117 @@ Encoding: UTF-8
 @import "_lib.scss";
 $color: var(--fg);
 $background: var(--bg);
-.terminal{    
-    button{
-        padding: 2px 10px;
-        margin: 2.5px;
-        background: rgba(0, 0, 0, 0);
-        &:hover {
-            cursor: pointer;
-            @include color($bg: var(--fg),$fg:var(--bg));
-            border: 2px solid var(--fg);
-        } 
+.terminal {
+  button {
+    padding: 2px 10px;
+    margin: 2.5px;
+    background: rgba(0, 0, 0, 0);
+    &:hover {
+      cursor: pointer;
+      @include color($bg: var(--fg), $fg: var(--bg));
+      border: 2px solid var(--fg);
     }
-    progress{
+  }
+  button {
+    @include color;
+    @include border;
+  }
+  label {
+  }
+
+  input {
+    @include color($bg: transparent);
+    @include border;
+    margin: 2px;
+
+    &::placeholder {
+      // color: color-mix(in srgb, color percentage, color percentage)
+      color: var(--fg);
+    }
+
+    &[type="text"],
+    &[type="email"],
+    &[type="search"],
+    &[type="phone"],
+    &[type="number"] {
+      @include color($bg: transparent);
+      @include border;
+    }
+    &[type="checkbox"] {
+      appearance: none;
+      @include border;
+      width: 1em;
+      height: 1em;
+      display: grid;
+      place-content: center;
+      margin: 0;
+      &::before {
+        content: "";
+        @include size(15px);
         
-    }
-    a{
-        color: $color;
-        &:hover {
-            cursor: pointer;
-            @include color($bg: var(--fg),$fg:var(--bg));
-            border: 2px solid var(--fg);
-        } 
-        &:after {
-            content: " [→]";
-        }
+      }
+      // &::after {
+      //   content: "]";
+      // }
+      &:checked {
+        &::before {
 
-        &:active {
-            /*color: var(--green-fg);*/
         }
-
-        &:visited:before {
-            content: "[V] ";
-        }
-        &:inactive{
-            text-decoration: line-through;
-        }
+        background-color: var(--fg);
+        content: "X";
+      }
+      &:focus {
+      }
     }
+
+    //   &[type="button"],
+    &::-webkit-file-upload-button {
+      @include color;
+      @include border;
+    }
+
+    &::-ms-check {
+    }
+  }
+
+  progress {
+    color: var(--fg);
+    &::-webkit-progress-bar {
+      //   background-color: var(--fg);
+      @include color($bg: transparent);
+    }
+    &::-webkit-progress-inner-element {
+      color: var(--fg);
+    }
+    &::-webkit-progress-value {
+      background-color: var(--fg);
+    }
+  }
+  .progress-bar {
+    .fill {
+    }
+  }
+
+  a {
+    color: $color;
+    &:hover {
+      cursor: pointer;
+      @include color($bg: var(--fg), $fg: var(--bg));
+      border: 2px solid var(--fg);
+    }
+    &:after {
+      content: " [→]";
+    }
+
+    &:active {
+      /*color: var(--green-fg);*/
+    }
+
+    &:visited:before {
+      content: "[V] ";
+    }
+    &:inactive {
+      text-decoration: line-through;
+    }
+  }
 }

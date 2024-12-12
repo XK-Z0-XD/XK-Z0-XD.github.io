@@ -1,5 +1,25 @@
 /*animations*/
-
+@keyframes openWindow{
+    0% {scale: 0 0;}
+    50%{scale: 1 0;}
+    100%{scale: 1 1;}
+}
+@keyframes closeWindow{
+    0%{ scale: 1 1;}
+    50%{scale: 1 0;}
+    100%{scale: 0 0;}
+    
+}
+@keyframes clock-spin {
+        0%, 15% { transform: rotate(0deg); }
+        25%, 40% { transform: rotate(90deg); }
+        50%, 65% { transform: rotate(180deg); }
+        75%, 90% { transform: rotate(270deg); }
+        100% { transform: rotate(360deg); }
+}
+@keyframes glitch {
+    
+}
 /*Joey Hoer*/
 @keyframes noise {
     0% { background-position:   0%   0%; }

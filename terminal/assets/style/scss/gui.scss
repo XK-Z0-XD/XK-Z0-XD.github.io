@@ -6,18 +6,79 @@ Encoding: UTF-8
 */
 @import "_lib.scss";
 @import url("main.css");
-.terminal{
-    
-    .window{
-        background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");
-        float: center;
-        .warning{
-            
-        }
-        .top-bar{
-            
-        }
-        
+.terminal {
+    #gui {
+        position: fixed;
+        z-index: 7;
     }
-    
+    .toggle-box {
+        display: inline-block;
+        position: fixed;
+    }
+    .toggle-content {
+    }
+    .window {
+        @include color;
+        position: fixed;
+        z-index: 2;
+        /*z-index: 8;*/
+        /*background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");*/
+        border: 2px solid;
+        margin: auto;
+        min-height: 200px;
+        min-width: 200px;
+        max-width: 87.5%;
+        max-height: 90%;
+        /*        max-width: 500px;
+            max-height: 500px;*/
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        float: center;
+        align-self: center;
+
+        &.closed{
+            display: none !important;
+            animation: closeWindow 2s ease-in-out;
+        }
+        &.show {
+            display: block !important;
+            animation: openWindow 2s ease-out;
+        }
+        iframe{
+            display: block;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow-y: auto;
+        }
+        .warning {
+            text-align: center;
+        }
+        .top-bar {
+            @include color;
+            border-color: var(--fg);
+            width: 100%;
+            display: block;
+            .win-title {
+                width: fit-content;
+                margin-left: 5px;
+                padding: 2px;
+                display: block;
+                float: left;
+            }
+        }
+        .pane {
+            background: transparent;
+            display: block;
+            width: 100%;
+            overflow-y: auto;
+        }
+    }
 }

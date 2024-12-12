@@ -10,7 +10,7 @@ html {
     box-sizing: border-box;
     outline: none;
     border: none;
-    text-transform: capitalize;
+    text-transform: uppercase;
     transition: all .2s ease-out;
     text-decoration: none;
 }
@@ -26,15 +26,20 @@ html {
 .terminal{
     @include font;
     @include color;
+    min-height: 100%;
     *::selection{
         @include color($bg: var(--fg),$fg: var(--bg));
     }
-    padding: 0.25em!important;
+    padding: 0.125em!important;
     margin: 0 auto;
     text-wrap: stable; 
     /*width: 100%;*/
-
-    #glitch{
+    iframe#console{
+        min-width: 100%;
+        min-height: 100%;
+        background-color: black !important; 
+    }
+    .glitch{
         animation: shadow 3s linear infinite, box-shadow 3s infinite;
     }
 
@@ -42,8 +47,8 @@ html {
         @include full;
         @include color;
         overflow: hidden;
-        animation: shadow 3s infinite, flicker 0.01s linear infinite;
-        padding: 5%;
+        animation: textShadow 3s infinite, flicker 0.01s linear infinite;
+        padding: 2.5%;
         &::before{
             @include full;
             background-color: var(--bg);
@@ -90,7 +95,7 @@ html {
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
             background-repeat: repeat-y;
             background-size: 100% 8px;
-            z-index: 3;
+            z-index: 10;
             pointer-events: none;
         }
     }
@@ -136,8 +141,9 @@ html {
     }
     #content{     
         h1{
-            font-size: 24px;
+            font-size: 20px;
         }
+        
         *:is(h1, h2, h3, h4, h5, h6) {
             @include font($family: "cprime");
             /*margin-bottom: 10px;*/

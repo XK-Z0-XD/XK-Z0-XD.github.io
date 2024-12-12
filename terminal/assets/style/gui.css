@@ -1,0 +1,80 @@
+/* Project: XK-Z0-XD.github.io
+Date: Dec 8, 2024
+Filename: gui.scss
+Author: XK-Z0-XD
+Encoding: UTF-8
+*/
+@import url("main.css");
+.terminal #gui {
+  position: fixed;
+  z-index: 7;
+}
+.terminal .toggle-box {
+  display: inline-block;
+  position: fixed;
+}
+.terminal .window {
+  background-color: var(--bg) !important;
+  color: var(--fg) !important;
+  position: fixed;
+  z-index: 2;
+  /*z-index: 8;*/
+  /*background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");*/
+  border: 2px solid;
+  margin: auto;
+  min-height: 200px;
+  min-width: 200px;
+  max-width: 87.5%;
+  max-height: 90%;
+  /*        max-width: 500px;
+      max-height: 500px;*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  float: center;
+  align-self: center;
+}
+.terminal .window.closed {
+  display: none !important;
+  animation: closeWindow 2s ease-in-out;
+}
+.terminal .window.show {
+  display: block !important;
+  animation: openWindow 2s ease-out;
+}
+.terminal .window iframe {
+  display: block;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+.terminal .window .warning {
+  text-align: center;
+}
+.terminal .window .top-bar {
+  background-color: var(--bg) !important;
+  color: var(--fg) !important;
+  border-color: var(--fg);
+  width: 100%;
+  display: block;
+}
+.terminal .window .top-bar .win-title {
+  width: fit-content;
+  margin-left: 5px;
+  padding: 2px;
+  display: block;
+  float: left;
+}
+.terminal .window .pane {
+  background: transparent;
+  display: block;
+  width: 100%;
+  overflow-y: auto;
+}
