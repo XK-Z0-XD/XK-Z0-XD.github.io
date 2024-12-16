@@ -1,0 +1,177 @@
+@import "lib.scss";
+html {
+  font-family: monospace;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.terminal {
+  @include font;
+  @include color;
+  min-height: 100%;
+  * {
+    &::-webkit-scrollbar {
+      width: 10px; /* Width of the scrollbar */
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--fg);
+
+      border-radius: 0px; /* Rounded corners */
+    }
+    scrollbar-width: 10px;
+    scrollbar-color: var(--fg) transparent;
+  }
+  *::selection {
+    @include color($bg: var(--fg), $fg: var(--bg));
+  }
+  padding: 0.125em !important;
+  margin: 0 auto;
+  text-wrap: stable;
+  /*width: 100%;*/
+  iframe#console {
+    min-width: 100%;
+    min-height: 100%;
+    background-color: black !important;
+  }
+  .glitch {
+    animation: shadow 3s linear infinite, box-shadow 3s infinite;
+  }
+  *[data-toggle="on"] {
+    display: block;
+  }
+
+  *[data-toggle="off"] {
+    display: none;
+  }
+  #screen {
+    @include full;
+    @include color;
+    overflow: hidden;
+    animation: textShadow 3s infinite, flicker 0.01s linear infinite;
+    padding: 2.5%;
+    &::before {
+      @include full;
+      background-color: var(--bg);
+      background-image: radial-gradient(
+        transparent 10%,
+        rgba(0, 0, 0, 0.5) 90%
+      );
+      opacity: 0.75;
+    }
+    &::after {
+      @include full;
+      @include screen;
+      z-index: 4;
+      display: block;
+      pointer-events: none;
+      background-image: var(--noise);
+      opacity: 0.375;
+      animation: noise 3s steps(5, end) infinite;
+    }
+    #background {
+      @include full;
+      @include screen;
+      animation: boxshadow 3 linear infinite;
+      opacity: 0.5;
+      color: var(--mid) !important;
+      index: 1;
+      position: fixed;
+    }
+  }
+  #crt {
+    @include screen;
+    @include full;
+    display: block;
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 10px;
+    z-index: 1;
+    background-image: var(--grad);
+    &::before {
+      /*-webkit-mask-box-image: url(--logo);*/
+    }
+    &::after {
+      @include screen;
+      @include full;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 50%,
+        transparent 50%
+      );
+      background-repeat: repeat-y;
+      background-size: 100% 8px;
+      z-index: 10;
+      pointer-events: none;
+    }
+  }
+  #scanline {
+    top: 0;
+    left: 0;
+    /*position: fixed;*/
+    width: 100%;
+    height: 10px;
+    z-index: 1;
+    /*        overflow: hidden;*/
+    &::after {
+      content: "";
+      width: 100%;
+      height: 35px;
+      bottom: 50%;
+      background-image: linear-gradient(
+        0deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        transparent 50%
+      );
+      animation: scan 3s linear infinite;
+      background-size: 100%;
+      animation-fill-mode: forwards;
+      position: absolute;
+      z-index: 5;
+    }
+  }
+  #content {
+    @include full;
+    z-index: 3;
+    /*position:;*/
+    overflow: auto;
+    height: 100%;
+    max-height: 800px;
+    scrollbar-width: 10px;
+    scrollbar-color: var(--fg) transparent;
+    &::-webkit-scrollbar {
+      width: 10px; /* Width of the scrollbar */
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--fg);
+      border-radius: 0px; /* Rounded corners */
+    }
+  }
+  table,
+  td,
+  th {
+    border: 1px solid var(--fg);
+    padding: 2px;
+  }
+  td,th{
+    padding: 3px;
+  }
+}

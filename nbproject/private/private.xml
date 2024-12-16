@@ -3,14 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/style/css/vars.css</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/style/scss/vars.scss</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/svg/logo/emblem.svg</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/style/scss/svg.scss</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/style/reset.css</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/index.html</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/style/scss/index.scss</file>
-            <file>file:/D:/github/scp/XK-Z0-XD.github.io/public/assets/svg/logo/main.svg</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/assets/style/reset.css</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/error404.html</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/assets/compile_scss.sh</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/.gitignore</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/.git/config</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/assets/style/test.scss</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/assets/_compile.sh</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/index.html</file>
+            <file>file:/D:/github/scp/XK-Z0-XD.github.io/terminal/console.html</file>
         </group>
     </open-files>
 </project-private>

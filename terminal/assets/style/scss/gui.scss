@@ -15,22 +15,16 @@ Encoding: UTF-8
         display: inline-block;
         position: fixed;
     }
-    .toggle-content {
-    }
     .window {
         @include color;
         position: fixed;
         z-index: 2;
-        /*z-index: 8;*/
-        /*background-image: url("https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png");*/
         border: 2px solid;
         margin: auto;
         min-height: 200px;
         min-width: 200px;
         max-width: 87.5%;
         max-height: 90%;
-        /*        max-width: 500px;
-            max-height: 500px;*/
         top: 0;
         bottom: 0;
         left: 0;

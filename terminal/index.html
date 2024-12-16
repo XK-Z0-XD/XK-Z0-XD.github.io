@@ -1,85 +1,212 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>XK-Z0-XD</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="assets/style/reset.css" type="text/css">    
-        <link rel="stylesheet" href="assets/style/css/main.css" type="text/css">  
-        <!--        <link rel="stylesheet" href="assets/style/css/gui.css" type="text/css">  
-                <link rel="stylesheet" href="assets/style/css/vars.css" type="text/css">    -->
 
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://kit.fontawesome.com/98e4c48f68.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/async/3.2.6/async.min.js"></script>
-        <script src="assets/js/terminal.js"></script>
-    </head>
-    <body class="terminal green">
-        <div id="screen">
-            <!--<object id="background" type="image/svg+xml" data="assets/svg/logo/emblem.svg"></object>-->
-<!--            <iframe id="background" src="assets/svg/logo/main.svg">               
-            </iframe>-->
-            <svg id="background" width="512" height="512" version="1.1" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+    <title>XK-Z0-XD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- -->
+    <link rel="icon" href="./assets/favicon.ico" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="assets/data/json/personnel.json" rel="preload" type="application/json">
+    <!--     <link rel="preload" href="assets/style/css/fonts/Bitwise-m19x.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="assets/style/css/fonts/ocr-a.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="assets/style/css/fonts/code-new-roman.regular.otf" as="font" type="font/otf"
+        crossorigin="anonymous">
+    <link rel="preload" href="assets/style/css/fonts/PxPlus_Rainbow100_re_80.ttf" as="font" type="font/ttf"
+        crossorigin="anonymous">
+    <link rel="preload" href="assets/style/css/fonts/Px437_Phoenix_BIOS-2y.ttf" as="font" type="font/ttf"
+        crossorigin="anonymous">
+    <link rel="preload" href="assets/style/css/fonts/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous"> 
+     <link rel="preload" href="assets/style/css/fonts/uwch.ttf" as="font" type="font/ttf" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="assets/style/reset.css" type="text/css">
+    <link rel="stylesheet" href="assets/style/main.css" type="text/css">
+
+    <!-- <link rel="" href="assets/data/json/personnel.json"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        type="text/css">
+    <!--SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/98e4c48f68.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/3.2.6/async.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <script src="assets/data/json/personnel.json" type="application/json"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <script src="assets/js/gui.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/terminal.js"></script>
+    <script src="assets/js/data.js" type="text/javascript"></script>
+</head>
+
+<body class="terminal green">
+    <div id="screen">
+        <svg id="background" width="512" height="512" version="1.1" viewBox="0 0 135 135"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="logo-content">
-            <circle id="innerCircle" cx="67.7" cy="71.5" r="33" fill="none" stroke="#000" stroke-width="6"/>
-            <path id="outerCircle" d="m51.9 11.9h31.7l3.07 11.4.944.391c19.4 8.03 32 26.9 32 47.9 0 2.26-.149 4.53-.445 6.77l-.133 1.01 8.37 8.37-15.8 27.4-11.4-3.06-.809.623c-9.06 6.95-20.2 10.7-31.6 10.7-11.4 6e-5-22.5-3.77-31.6-10.7l-.81-.623-11.4 3.06-15.8-27.4 8.37-8.37-.133-1.01c-.296-2.25-.445-4.51-.445-6.77.000141-21 12.6-39.9 32-47.9l.944-.391z" fill="none" stroke="#000" stroke-width="4"/>
-            <path class="arrow" id="b" d="m64.7 30.6v24h-5.08l8.08 14 8.08-14h-5.08l-.000265-24h-5.99" fill="#000" stroke="#000"/>
-            <use class="arrow" id="a" transform="rotate(120 67.7 71.5)" xlink:href="#b"/>
-            <use class="arrow" transform="rotate(120 67.7 71.5)" xlink:href="#a"/>
+                <circle id="innerCircle" cx="67.7" cy="71.5" r="33" fill="none" stroke="#000" stroke-width="6" />
+                <path id="outerCircle"
+                    d="m51.9 11.9h31.7l3.07 11.4.944.391c19.4 8.03 32 26.9 32 47.9 0 2.26-.149 4.53-.445 6.77l-.133 1.01 8.37 8.37-15.8 27.4-11.4-3.06-.809.623c-9.06 6.95-20.2 10.7-31.6 10.7-11.4 6e-5-22.5-3.77-31.6-10.7l-.81-.623-11.4 3.06-15.8-27.4 8.37-8.37-.133-1.01c-.296-2.25-.445-4.51-.445-6.77.000141-21 12.6-39.9 32-47.9l.944-.391z"
+                    fill="none" stroke="#000" stroke-width="4" />
+                <path class="arrow" id="b" d="m64.7 30.6v24h-5.08l8.08 14 8.08-14h-5.08l-.000265-24h-5.99" fill="#000"
+                    stroke="#000" />
+                <use class="arrow" id="a" transform="rotate(120 67.7 71.5)" xlink:href="#b" />
+                <use class="arrow" transform="rotate(120 67.7 71.5)" xlink:href="#a" />
             </g>
-            </svg>
-            <div id="crt">
-                <div id="scanline"></div> 
-                <div id="main" class="container">
-                    <main id="content">
-                        <header>
-                            <h1>SCP-TERMINAL</h1>
-                        </header>
-                        <div id="general-info">
-                            <pre id="scp-general">> Item #
-> Containment Class:
-> Clearance Level:
+        </svg>
+        <div id="crt">
+            <div id="scanline"></div>
+            <div id="main" class="container">
+                <main id="content">
+                    <header>
+                        <h1>TERMINAL Theme</h1>
+                    </header>
+                    <div id="general-info">
+                        <pre id="scp-general">> Item #
+> Containment Class: N\A
+> Clearance Level: N\A
 > Disruption Class: N\A
 > Secondary Class: N\A <span class="carret"></span></pre>
-                        </div>
-                        
-                        <!--- Item #: <span id="item_no">999</span>
-                                - Clearance Level: <span id="clearance_level">2</span>/<span id="clearance_title">Restricted</span> <br>
-                                - Containment Class: <span id="containment">Euclid</span>
-                                - Disruption Class: <span id="cont_class">Euclid</span>
-                                - Containment Class: <span id="cont_class">Euclid</span>-->
-                        <div id="scp-desc">
-                            <h2>Special Containment Procedures</h2>
-                            <p> description</p>
-                        </div>
-                        <!--viewBox="0 0 135 135"-->
-                        <!--                        <svg id="background" width="512" height="512" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                    <circle cx="67.7" cy="71.5" r="33" fill="none" stroke="#000" stroke-width="6"/>
-                                                    <path class="path" d="m51.9 11.9h31.7l3.07 11.4.944.391c19.4 8.03 32 26.9 32 47.9 0 2.26-.149 4.53-.445 6.77l-.133 1.01 8.37 8.37-15.8 27.4-11.4-3.06-.809.623c-9.06 6.95-20.2 10.7-31.6 10.7-11.4 6e-5-22.5-3.77-31.6-10.7l-.81-.623-11.4 3.06-15.8-27.4 8.37-8.37-.133-1.01c-.296-2.25-.445-4.51-.445-6.77.000141-21 12.6-39.9 32-47.9l.944-.391z" fill="none" stroke="#000" stroke-width="4"/>
-                                                    <path class="path" id="b" d="m64.7 30.6v24h-5.08l8.08 14 8.08-14h-5.08l-.000265-24h-5.99"/>
-                                                    <use id="a" transform="rotate(120 67.7 71.5)" xlink:href="#b"/>
-                                                    <use transform="rotate(120 67.7 71.5)" xlink:href="#a"/>
-                                                </svg>-->
+                    </div>
+                    <div>
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <h6>Heading 6</h6>
+                        <strong>Special Containment Procedures</strong>
+                        <blockquote>
+                            <p>block quote</p>
+                        </blockquote>
+                        <hr />
+                        <table>
+                            <tr>
+                                <th>heading</th>
+                                <th>heading</th>
+                                <th>heading</th>
+                            </tr>
 
-                        <!--                        <iframe src="https://scp-wiki.wikidot.com/scp-5555"
-                                                        title="scp"></iframe>-->
-                        <blockquote id="log">
+                            <tr>
+                                <td>table date</td>
+                                <td>table date</td>
+                                <td>table date</td>
+                            </tr>
+                            <tr>
+                                <td>table date</td>
+                                <td>table date</td>
+                                <td>table date</td>
+                            </tr>
+                            <tr>
+                                <td>table date</td>
+                                <td>table date</td>
+                                <td>table date</td>
+                            </tr>
+                        </table>
+                        <!-- <blockquote id="log">
+                            Log
                             <figure>
+                                <img src="https://scp-wiki.wdfiles.com/local--files/scp-555/1280px-CowMagnet.jpg"
+                                    alt="image" />
                                 <figcaption>
                                     Picture
                                 </figcaption>
                             </figure>
-                            <!--<p>this is a <strong>block quote</strong></p>-->
-                            <!--<iframe id="output" src="https://scipnet-terminal.web.app/"></iframe>-->
-                        </blockquote>
-                        <a href="https://scipnet-terminal.web.app/">SCiPNET</a>
-                    </main>
-                </div>
+                            <p>this is a <strong>block quote</strong></p>
+                        </blockquote> -->
+                        <details>
+                            <summary>Details</summary>
+                            <p>After <strong></strong>hunting for several hours, we finally saw a large seal sunning
+                                itself
+                                on a flat rock. I
+                                took one of the wooden
+                                clubs while Larry took the longer one. We slowly snuck up behind the seal until we were
+                                close enough to club it over its
+                                head. The seal slumped over and died. This seal would help us survive. We could eat the
+                                meat
+                                and fat. The fat could be
+                                burned in a shell for light and the fur could be used to make a blanket. We declared our
+                                first day of hunting a great
+                                success.
+                            </p><br />
+                            <p>The lone lamp post of the one-street town flickered, not quite dead but definitely on its
+                                way
+                                out. Suitcase by her side,
+                                she paid no heed to the light, the street or the town. A car was coming down the street
+                                and
+                                with her arm outstretched
+                                and thumb in the air, she had a plan.</p>
+                            <a href="https://scipnet-terminal.web.app/">SCiPNET</a>
+                        </details>
+
+                    </div>
+                    <div id="scp-desc">
+
+                        <div id="gui">
+                            <div class="toggle-box">
+                                <div id="console-win" class="window closed">
+                                    <div class="pane">
+                                        <iframe id="console" src="console.html" title="test frame"></iframe>
+                                    </div>
+                                </div>
+                                <!-- <div id="test" class="window open" data-bs-toggle="modal">
+                                    <div class="top-bar">
+                                        <h2>FORM</h2>
+                                    </div>
+                                    <div class="pane">
+                                        <div class="warning">
+                                            WARNING
+                                        </div>
+                                        <fieldset>
+                                            <legend>
+                                                Personal Information
+
+                                            </legend>
+                                            <table class="no-border">
+                                                <tr>
+                                                    <td><label>Name: </label></td>
+                                                    <td><input type="text" placeholder="name:" value="John Doe"></td>
+                                                    <td><label for="phone"> Phone: </label></td>
+                                                    <td><input id="phone" type="tel" placeholder="###-###-####"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label for="email"> Email: </label></td>
+                                                    <td><input id="email" type="email" value="jdoe@foundation.scp">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><label for="dob">dob: </label></td>
+                                                    <td><input id="dob" type="date"></td>
+                                                </tr>
+                                            </table>
+                                            <progress id="prog" value="50" max="100">50%</progress>
+                                        </fieldset>
+                                        <input type="tel" placeholder="text">
+                                        <input type="email" placeholder="text">
+                                        <input type="password" placeholder="text">
+                                        <input type="file" placeholder="text">
+                                        <input type="date" placeholder="text">
+
+                                        <input id="checkbox" type="checkbox" checked>
+                                        <label for="checkbox">
+                                            Check Box
+                                        </label>
+                                        <object src="data/json/personnel.json"></object>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
             </div>
         </div>
-    </body>
+    </div>
+
+</body>
+
 </html>

@@ -4,15 +4,22 @@
  * Author: XK-Z0-XD
  * Encoding: UTF-8
  */
-
-function getInfo(itemNo){
-    const link = {main:"https://scp-wiki.wikidot.com/",
-    img:"local--files/component:anomaly-class-bar/"};
-const paths = {
-    scp_item:"/scp-",
-    containment: "/local--files/component:anomaly-class-bar/"
-}
-}
-function general(item){
+function getRequest(url) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET",url,true);
+    xhttp.onload = function () {
+        console.log("LOADED");
+    };
     
 }
+function getInfo(itemNo) {
+  const link = {
+    main: "https://scp-wiki.wikidot.com/",
+    img: "local--files/component:anomaly-class-bar/",
+  };
+  const paths = {
+    scp_item: "/scp-",
+    containment: "/local--files/component:anomaly-class-bar/",
+  };
+}
+function general(item) {}

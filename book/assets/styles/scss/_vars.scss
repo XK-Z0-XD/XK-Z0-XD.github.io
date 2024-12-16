@@ -1,0 +1,32 @@
+:root {
+  --border: #555;
+  --html-bg: #000;
+  --primary: #7fc2ff;
+  --font-fam-default: Georgia, "Times New Roman", serif;
+  --font-heading: "Cherish", cursive;
+  --gold: #ffdf00;
+  --metal-gold: #bf9b30;
+  --silver: #c0c0c0;
+  --white: #fff;
+  --bg: #291d4d;
+  --bg-2: #582a79;
+  --border-width: 3.5px;
+  --border-color: #da9100;
+  --border-rad: 5px;
+  --stroke: #000;
+  --text-fill: #ff0;
+  --color: #fff;
+  --color-2: #000;
+  --leather: #b67a4f;
+  --theme-color: #bf9b30;
+  --theme-border: #7e0b02;
+  --theme-bg: #9b111e;
+  --txt-border: 1px 0 var(--stroke), -1px 0 var(--stroke), 0 1px var(--stroke),
+    0 -1px var(--stroke), 1px 1px var(--stroke), -1px -1px var(--stroke),
+    1px -1px var(--stroke), -1px 1px var(--stroke);
+}
+.book{
+  border-color: var(--theme-border);
+  background-color: var(--theme-bg);
+  color: var(--metal-gold);
+}

@@ -99,26 +99,5 @@ $background: var(--bg);
     }
   }
 
-  a {
-    color: $color;
-    &:hover {
-      cursor: pointer;
-      @include color($bg: var(--fg), $fg: var(--bg));
-      border: 2px solid var(--fg);
-    }
-    &:after {
-      content: " [→]";
-    }
-
-    &:active {
-      /*color: var(--green-fg);*/
-    }
-
-    &:visited:before {
-      content: "[V] ";
-    }
-    &:inactive {
-      text-decoration: line-through;
-    }
-  }
+ 
 }

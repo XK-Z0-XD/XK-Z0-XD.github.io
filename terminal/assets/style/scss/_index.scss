@@ -1,202 +1,117 @@
-@import 'lib.scss';
-html {
-    font-family: monospace;
-    overflow: hidden;
-}
+@import "lib.scss";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
+.terminal {
+  #main {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include full;
+    &::before {
+      @include screen;
+      stroke: var(--fg);
+      padding: 5%;
+      overflow-y: hidden;
+    }
+  }
+   a {
+    color: var(--fg);
+    &:hover {
+      cursor: pointer;
+      @include color($bg: var(--fg), $fg: var(--bg));
+      border: 2px solid var(--fg);
+    }
+    &:after {
+      content: " [→]";
+    }
+
+    &:active {
+      color: var(--bg);
+      background-color: var(--fg);
+    }
+
+    &:visited:before {
+      content: "[V] ";
+    }
+    &:inactive {
+      text-decoration: line-through;
+    }
+  }
+  // h1 {
+  //   font-size: 20px;
+  // }
+  *:is(h1, h2, h3, h4, h5, h6) {
+    @include font($family: phoenix-vga);
+    /*margin-bottom: 10px;*/
+    width: 100%;
+    /*font-size: inherit;*/
+    font-weight: bold;
+    color: var(--fg);
     text-transform: uppercase;
-    transition: all .2s ease-out;
-    text-decoration: none;
+    text-align: center;
+    /*text-decoration: underline;*/
+    &::before {
+      content: "[";
+    }
+    &::after {
+      content: "]";
+    }
+  }
+  *:is(code, pre) {
+    @include font($family: rainbow);
+    font-size: 16px;
+  }
+  hr {
+    border: 1px dashed var(--border-color);
+    margin: 5px 0;
+  }
+  p {
+    @include font(codenr);
+  }
+
+  pre {
+    text-align: left;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: cborder(1px, dashed);
+  }
+  details {
+    > summary {
+      background-color: $foreground;
+      color: var(--bg);
+      font-size: 18px;
+      @include font($family: codenr);
+      font-weight: bold;
+      &::marker {
+        content: "+ ";
+      }
+    }
+    &[open] {
+      > summary {
+        &::marker {
+          content: "- ";
+        }
+      }
+    }
+  }
 }
+#logo {
+  #inner {
+    fill: none;
+    color: var(--mid);
+    stroke: var(--mid);
+    stroke-width: 6px;
+  }
 
-*[data-toggle=on] {
-    display: block;
-}
-
-*[data-toggle=off] {
-    display: none;
-}
-
-.terminal{
-    @include font;
-    @include color;
-    min-height: 100%;
-    *::selection{
-        @include color($bg: var(--fg),$fg: var(--bg));
-    }
-    padding: 0.125em!important;
-    margin: 0 auto;
-    text-wrap: stable; 
-    /*width: 100%;*/
-    iframe#console{
-        min-width: 100%;
-        min-height: 100%;
-        background-color: black !important; 
-    }
-    .glitch{
-        animation: shadow 3s linear infinite, box-shadow 3s infinite;
-    }
-
-    #screen{
-        @include full;
-        @include color;
-        overflow: hidden;
-        animation: textShadow 3s infinite, flicker 0.01s linear infinite;
-        padding: 2.5%;
-        &::before{
-            @include full;
-            background-color: var(--bg);
-            background-image: radial-gradient(transparent 10%, rgba(0, 0, 0, 0.5) 90%);
-            opacity: 0.75;
-        }
-        &::after{
-            @include full;
-            @include screen;
-            z-index: 4;
-            display: block;
-            pointer-events: none;
-            background-image: var(--noise);
-            opacity: 0.375;
-            animation: noise 3s steps(5, end) infinite;
-        }
-        #background{
-            @include full;
-            @include screen;
-            animation: boxshadow 3 linear infinite;
-            opacity: 0.5;
-            color: var(--mid)!important;
-            index: 1;
-            position: fixed;
-        }
-    }
-    #crt{
-        @include screen;
-        @include full;
-        display: block;
-        /*position: absolute;*/
-        top: 0;
-        left: 0; 
-        overflow: hidden;
-        padding: 10px;
-        z-index: 1;
-        background-image: var(--grad);
-        &::before{
-            /*-webkit-mask-box-image: url(--logo);*/
-        }
-        &::after{
-            @include screen;
-            @include full;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
-            background-repeat: repeat-y;
-            background-size: 100% 8px;
-            z-index: 10;
-            pointer-events: none;
-        }
-    }
-    #scanline{
-        top: 0;
-        left: 0;
-        /*position: fixed;*/
-        width: 100%;
-        height: 10px;
-        z-index: 1;
-        /*        overflow: hidden;*/
-        &::after{
-            content:"";
-            width: 100%;
-            height: 35px;
-            bottom: 50%;
-            background-image: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.15) 50%, transparent 50%);
-            animation: scan 3s linear infinite;
-            background-size: 100%;
-            animation-fill-mode: forwards;
-            position: absolute;
-            z-index: 5;
-        }
-
-    }
-
-    #main{
-        /*background-image: url("data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 135 135' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Clink xmlns='http://www.w3.org/1999/xhtml' rel='stylesheet' href='../../style/css/svg.css' type='text/css' /%3E%3Cdefs%3E%3Cstyle%3E @import url('../../style/css/vars.css'); @import url('../../style/css/svg.css'); %3C/style%3E%3C/defs%3E%3Ccircle cx='67.7' cy='71.5' r='33' fill='none' stroke='var(--fg)' stroke-width='6'/%3E%3Cpath d='m51.9 11.9h31.7l3.07 11.4.944.391c19.4 8.03 32 26.9 32 47.9 0 2.26-.149 4.53-.445 6.77l-.133 1.01 8.37 8.37-15.8 27.4-11.4-3.06-.809.623c-9.06 6.95-20.2 10.7-31.6 10.7-11.4 6e-5-22.5-3.77-31.6-10.7l-.81-.623-11.4 3.06-15.8-27.4 8.37-8.37-.133-1.01c-.296-2.25-.445-4.51-.445-6.77.000141-21 12.6-39.9 32-47.9l.944-.391z' fill='none' stroke='var(--fg)' stroke-width='4'/%3E%3Cpath id='b' d='m64.7 30.6v24h-5.08l8.08 14 8.08-14h-5.08l-.000265-24h-5.99' fill='var(--fg)' stroke='var(--fg)'/%3E%3Cuse id='a' transform='rotate(120 67.7 71.5)' xlink:href='%23b'/%3E%3Cuse transform='rotate(120 67.7 71.5)' xlink:href='%23a'/%3E%3C/svg%3E");*/
-        /*background-image: url("../../svg/logo/main.svg");*/
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        /*background-attachment: fixed;*/
-        @include full;
-        &::before{ 
-            @include screen;
-            stroke: var(--fg);
-            padding: 5%;
-            overflow-y: hidden;
-
-        }
-
-    }
-    #content{     
-        h1{
-            font-size: 20px;
-        }
-        
-        *:is(h1, h2, h3, h4, h5, h6) {
-            @include font($family: "cprime");
-            /*margin-bottom: 10px;*/
-            width: 100%;
-            /*font-size: inherit;*/
-            font-weight: bold;
-            color: var(--fg);
-            text-transform: uppercase;
-            text-align: center;
-            /*text-decoration: underline;*/
-            &::before {
-                content: "[ ";
-            }
-            &::after {
-                content: " ]";
-            }
-        }
-    }
-    hr {
-        border: 1px dashed var(--border-color);
-        margin: 5px 0;
-    }
-    p {
-        @include font("cnr");
-        /*font-family: Rainbow100, var(--text-font);*/
-    }
-    
-/*    svg#emblem{
-        position: fixed;
-        *{
-            color: var(--fg);
-        }
-    }*/
-
-}
-#logo{
-    #inner{
-        fill: none;
-        color: var(--mid);
-        stroke: var(--mid);
-        stroke-width: 6px;
-    }
-    
-    #outer{
-        fill: "none";
-        color: var(--mid);
-        stroke: var(--mid);
-        stroke-width: 4;
-    }
-    .arrow{
-        color: var(--mid);
-         fill: var(--mid);
-        stroke: var(--mid);
-    }
-    
+  #outer {
+    fill: "none";
+    color: var(--mid);
+    stroke: var(--mid);
+    stroke-width: 4;
+  }
+  .arrow {
+    color: var(--mid);
+    fill: var(--mid);
+    stroke: var(--mid);
+  }
 }

@@ -6,7 +6,8 @@
  */
 
 
-const link = {
-    main: "",
+const links = {
+    main: "https://scp-wiki.wikidot.com/",
     
 };
+var windows = [];
